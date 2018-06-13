@@ -45,14 +45,20 @@
 				});
 				document.getElementById('signinform').addEventListener('submit', (event) => {
 					event.preventDefault();
-					console.log("Reached login credential checking page");
+					//console.log("Reached login credential checking page");
 					const username = localStorage.getItem('Username');
 					const password = localStorage.getItem('Password');
-					console.log(username + ' $$$ ' + password);
+
 					var lname = document.getElementById('loginname').value;
 					var lpass = document.getElementById('loginpass').value;
 
-					console.log(lname + ' $$$ ' + lpass);
+					if (lname == username && lpass == password) {
+						window.location.href = 'dashboard.html';
+						/*opens the dashboard page while Id & password matches*/
+					}
+					else {
+						alert("Error Password or Username")/*displays error message*/
+					}
 
 				});
 			}
@@ -66,7 +72,7 @@
 	</script>
 	<script>
 
-
+		//Display Toggling Function Starts here
 		function signUp() {
 			console.log("Reached SignUp")
 
@@ -108,6 +114,8 @@
 			alert("Password updated! Login Again to continue.");
 			window.location.href = 'index.html';
 		}
+		//Display Toggling Function Ends here
+
 
 	</script>
 
