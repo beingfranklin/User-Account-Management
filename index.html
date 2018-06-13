@@ -67,6 +67,10 @@
 			document.getElementById("otpcheck").style.display = "none";
 			document.getElementById("changepass").style.display = "block";//Only this is activated
 		}
+		function updatedPass() {
+			alert("Password updated! Login Again to continue.");
+			window.location.href = 'index.html';
+		}
 
 	</script>
 
@@ -125,7 +129,7 @@
 								Forgot
 							</span>
 
-							<a href="#" class="txt2">
+							<a href="#" onclick="otpSend(); return false;" class="txt2">
 								Username / Password?
 							</a>
 						</li>
@@ -233,7 +237,7 @@
 
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button type="button" onclick="otpCheck()" class="login100-form-btn">
 							Send an OTP
 						</button>
 					</div>
@@ -264,7 +268,7 @@
 
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button type="button" onclick="changePass()" class="login100-form-btn">
 							Check OTP
 						</button>
 					</div>
@@ -300,7 +304,7 @@
 
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button type="button" onclick="updatedPass()" class="login100-form-btn">
 							Change Password
 						</button>
 					</div>
