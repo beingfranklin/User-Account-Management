@@ -530,3 +530,11 @@ iframe {
 #profile {
   display: none;
 }
+
+#signup,
+#otpsend,
+#otpcheck,
+#changepass {
+  display: none;
+}
+/* Toggling CSS End */
