@@ -19,6 +19,57 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<!--===============================================================================================-->
 
+	<style>
+		#signup,
+		#otpsend,
+		#otpcheck,
+		#changepass {
+			display: none;
+		}
+	</style>
+	<script>
+
+
+		function signUp() {
+			console.log("Reached SignUp")
+
+			document.getElementById("signup").style.display = "block";//Only this is activated
+			document.getElementById("signin").style.display = "none";
+			document.getElementById("otpsend").style.display = "none";
+			document.getElementById("otpcheck").style.display = "none";
+			document.getElementById("changepass").style.display = "none";
+		}
+		function signIn() {
+			document.getElementById("signup").style.display = "none";
+			document.getElementById("signin").style.display = "block";//Only this is activated
+			document.getElementById("otpsend").style.display = "none";
+			document.getElementById("otpcheck").style.display = "none";
+			document.getElementById("changepass").style.display = "none";
+		}
+		function otpSend() {
+			document.getElementById("signup").style.display = "none";
+			document.getElementById("signin").style.display = "none";
+			document.getElementById("otpsend").style.display = "block";//Only this is activated
+			document.getElementById("otpcheck").style.display = "none";
+			document.getElementById("changepass").style.display = "none";
+		}
+		function otpCheck() {
+			document.getElementById("signup").style.display = "none";
+			document.getElementById("signin").style.display = "none";
+			document.getElementById("otpsend").style.display = "none";
+			document.getElementById("otpcheck").style.display = "block";//Only this is activated
+			document.getElementById("changepass").style.display = "none";
+		}
+		function changePass() {
+			document.getElementById("signup").style.display = "none";
+			document.getElementById("signin").style.display = "none";
+			document.getElementById("otpsend").style.display = "none";
+			document.getElementById("otpcheck").style.display = "none";
+			document.getElementById("changepass").style.display = "block";//Only this is activated
+		}
+
+	</script>
+
 </head>
 
 <body>
@@ -85,7 +136,7 @@
 					<br>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button type="button" onclick="signUp()" class="login100-form-btn">
 							Register
 						</button>
 					</div>
@@ -144,7 +195,7 @@
 					<br>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button type="button" onclick="signIn()" class="login100-form-btn">
 							Login
 						</button>
 					</div>
@@ -268,7 +319,9 @@
 
 
 
-	<script src="js/main.js"></script>
+	<!-- <script src="js/main.js"></script> -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 
 </body>
