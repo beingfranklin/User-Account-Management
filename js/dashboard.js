@@ -1,6 +1,7 @@
+//Gloabal access of the username .. ie to display the name in the navbar
 var uname = localStorage.getItem("Username");
 console.log(uname);
-
+//Toggling function starts here
 function showdash() {
   document.getElementById("dash").style.display = "block";
   document.getElementById("profile").style.display = "none";
@@ -9,7 +10,9 @@ function profile() {
   document.getElementById("dash").style.display = "none";
   document.getElementById("profile").style.display = "block";
 }
-function updatedProfile() {}
+//Toggling function ends here
+
+//Update the profile
 window.onload = function() {
   document.getElementById("profileupdate").addEventListener("submit", event => {
     event.preventDefault();
@@ -25,3 +28,5 @@ window.onload = function() {
     window.location.href = "dashboard.html";
   });
 };
+// More functions , curerently not used
+function updatedProfile() {}
