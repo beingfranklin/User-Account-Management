@@ -18,7 +18,27 @@
 	<!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<![endif]-->
+
+	<style>
+		#profile {
+			display: none;
+		}
+	</style>
+	<script>
+		function showdash() {
+			document.getElementById("dash").style.display = "block";
+			document.getElementById("profile").style.display = "none";
+		}
+		function profile() {
+			document.getElementById("dash").style.display = "none";
+			document.getElementById("profile").style.display = "block";
+		}
+		function updatedProfile() {
+			alert("Profile updated!");
+			window.location.href = 'dashboard.html';
+		}
+	</script>
 </head>
 
 <body>
@@ -56,10 +76,10 @@
 									</a>
 									<ul class="dropdown-menu animated fadeInUp">
 										<li>
-											<a href="">Profile</a>
+											<a onclick="profile(); return false;" href="">Profile</a>
 										</li>
 										<li>
-											<a href="">Logout</a>
+											<a href="index.html">Logout</a>
 										</li>
 									</ul>
 								</li>
@@ -67,6 +87,12 @@
 						</nav>
 					</div>
 				</div>
+
+
+
+
+
+
 			</div>
 		</div>
 	</div>
@@ -256,7 +282,7 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button type="button" onclick="updatedProfile()" class="login100-form-btn">
 							Update your Profile
 						</button>
 					</div>
@@ -280,7 +306,7 @@
 	</footer>
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://code.jquery.com/jquery.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src="js/custom.js"></script>
