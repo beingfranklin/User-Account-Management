@@ -2,6 +2,7 @@
 <html>
 
 <head>
+	<meta charset="UTF-8">
 	<title>Dashboard</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Bootstrap -->
@@ -26,6 +27,14 @@
 		}
 	</style>
 	<script>
+
+
+
+		var uname = localStorage.getItem('Username');
+		console.log(uname);
+
+
+
 		function showdash() {
 			document.getElementById("dash").style.display = "block";
 			document.getElementById("profile").style.display = "none";
@@ -34,10 +43,24 @@
 			document.getElementById("dash").style.display = "none";
 			document.getElementById("profile").style.display = "block";
 		}
-		function updatedProfile() {
-			alert("Profile updated!");
-			window.location.href = 'dashboard.html';
+		function updatedProfile() { }
+		window.onload = function () {
+			document.getElementById('profileupdate').addEventListener('submit', (event) => {
+				event.preventDefault();
+				// Get the value of the name field.
+				var newunamed = document.getElementById('newuname').value;
+				var newpassd = document.getElementById('newpass').value;
+				// Save the name and password in localStorage.
+				localStorage.setItem('Username', newunamed);
+				localStorage.setItem('Password', newpassd);
+				uname = localStorage.getItem('Username');
+				alert("Profile updated!");
+				window.location.href = 'dashboard.html';
+			});
 		}
+
+
+
 	</script>
 </head>
 
@@ -48,8 +71,10 @@
 				<div class="col-md-5">
 					<!-- Logo -->
 					<div class="logo">
-						<h1>
-							<a href="#">Welcome to your Dashboard!</a>
+						<h1 class="logo">
+							<a href="#">
+								<img width='50px' src="images/avatar-01.jpg" alt="Logo"> Cactus ProSoft
+							</a>
 						</h1>
 					</div>
 				</div>
@@ -71,7 +96,10 @@
 							<ul class="nav navbar-nav">
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-										<i class="fa fa-user"></i>Account
+										<i class="fa fa-user"></i>
+										<script type="text/javascript">
+											document.write(uname);
+										</script>
 										<b class="caret"></b>
 									</a>
 									<ul class="dropdown-menu animated fadeInUp">
@@ -255,6 +283,27 @@
 							<br />
 							<br />
 						</div>
+						<div class="content-box-large box-with-header">
+							Pellentesque luctus quam quis consequat vulputate. Sed sit amet diam ipsum. Praesent in pellentesque diam, sit amet dignissim
+							erat. Aliquam erat volutpat. Aenean laoreet metus leo, laoreet feugiat enim suscipit quis. Praesent mauris mauris,
+							ornare vitae tincidunt sed, hendrerit eget augue. Nam nec vestibulum nisi, eu dignissim nulla.
+							<br />
+							<br />
+						</div>
+						<div class="content-box-large box-with-header">
+							Pellentesque luctus quam quis consequat vulputate. Sed sit amet diam ipsum. Praesent in pellentesque diam, sit amet dignissim
+							erat. Aliquam erat volutpat. Aenean laoreet metus leo, laoreet feugiat enim suscipit quis. Praesent mauris mauris,
+							ornare vitae tincidunt sed, hendrerit eget augue. Nam nec vestibulum nisi, eu dignissim nulla.
+							<br />
+							<br />
+						</div>
+						<div class="content-box-large box-with-header">
+							Pellentesque luctus quam quis consequat vulputate. Sed sit amet diam ipsum. Praesent in pellentesque diam, sit amet dignissim
+							erat. Aliquam erat volutpat. Aenean laoreet metus leo, laoreet feugiat enim suscipit quis. Praesent mauris mauris,
+							ornare vitae tincidunt sed, hendrerit eget augue. Nam nec vestibulum nisi, eu dignissim nulla.
+							<br />
+							<br />
+						</div>
 					</div>
 				</div>
 
@@ -265,29 +314,25 @@
 	<div class="limiter" id="profile">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-85 p-b-20">
-				<form class="login100-form validate-form">
+				<form id="profileupdate" class="login100-form validate-form">
 					<span class="login100-form-title p-b-70">
 						Update Profile
 					</span>
-
-
 					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate="Enter username">
-						<input class="input100" type="text" name="username">
+						<input id="newuname" class="input100" type="text" name="username">
 						<span class="focus-input100" data-placeholder="Username"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-50" data-validate="Enter password">
-						<input class="input100" type="password" name="pass">
+						<input id="newpass" class="input100" type="password" name="pass">
 						<span class="focus-input100" data-placeholder="Password"></span>
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button type="button" onclick="updatedProfile()" class="login100-form-btn">
-							Update your Profile
+						<button type="submit" class="login100-form-btn">
+							Updated Profile
 						</button>
 					</div>
-
-
 
 				</form>
 			</div>
