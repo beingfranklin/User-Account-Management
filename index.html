@@ -28,6 +28,31 @@
 		}
 	</style>
 	<script>
+		window.onload = function () {
+
+			// Check for LocalStorage support.
+			if (localStorage) {
+
+				// Add an event listener for form submissions
+				document.getElementById('signupform').addEventListener('submit', (event) => {
+					event.preventDefault();
+					// Get the value of the name field.
+					var uname = document.getElementById('username').value;
+					var upass = document.getElementById('pass').value;
+					// Save the name in localStorage.
+					localStorage.setItem('Username', uname);
+					localStorage.setItem('Password', upass);
+				});
+
+			}
+			else {
+				alert("No support. Use a fallback such as browser cookies or store on the server.");
+			}
+
+		}
+
+	</script>
+	<script>
 
 
 		function signUp() {
@@ -155,24 +180,24 @@
 	<div class="limiter" id="signup">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-85 p-b-20">
-				<form class="login100-form validate-form">
+				<form id="signupform" class="login100-form validate-form">
 					<span class="login100-form-title p-b-70">
 						Sign Up
 					</span>
 
 
 					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate="Enter username">
-						<input class="input100" type="text" name="username">
+						<input id="username" class="input100" type="text" name="username">
 						<span class="focus-input100" data-placeholder="Username"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-50" data-validate="Enter password">
-						<input class="input100" type="password" name="pass">
+						<input id="pass" class="input100" type="password" name="pass">
 						<span class="focus-input100" data-placeholder="Password"></span>
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button type="submit" class="login100-form-btn">
 							Create an Account
 						</button>
 					</div>
