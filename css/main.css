@@ -525,3 +525,8 @@ iframe {
 .btn-google:hover {
   color: #fff;
 }
+
+/* Toggling CSS */
+#profile {
+  display: none;
+}
