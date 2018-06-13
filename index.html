@@ -39,17 +39,29 @@
 					// Get the value of the name field.
 					var uname = document.getElementById('username').value;
 					var upass = document.getElementById('pass').value;
-					// Save the name in localStorage.
+					// Save the name and password in localStorage.
 					localStorage.setItem('Username', uname);
 					localStorage.setItem('Password', upass);
 				});
+				document.getElementById('signinform').addEventListener('click', (event) => {
+					event.preventDefault();
+					console.log("Reached login credential checking page");
+					const username = localStorage.getItem('Username');
+					const password = localStorage.getItem('Password');
+					console.log(username + ' $$$ ' + password);
+					var lname = document.getElementById('loginname').value;
+					var lpass = document.getElementById('loginpass').value;
 
+					console.log(lname + ' $$$ ' + lpass);
+
+				});
 			}
 			else {
 				alert("No support. Use a fallback such as browser cookies or store on the server.");
 			}
-
 		}
+
+
 
 	</script>
 	<script>
@@ -106,7 +118,7 @@
 	<div class="limiter " id="signin">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-85 p-b-20">
-				<form class="login100-form validate-form">
+				<form id="signinform" class="login100-form validate-form">
 					<span class="login100-form-title p-b-70">
 						Sign In
 					</span>
@@ -115,17 +127,17 @@
 					</span>
 
 					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate="Enter username">
-						<input class="input100" type="text" name="username">
+						<input id="loginname" class="input100" type="text" name="username">
 						<span class="focus-input100" data-placeholder="Username"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-50" data-validate="Enter password">
-						<input class="input100" type="password" name="pass">
+						<input id="loginpass" class="input100" type="password" name="pass">
 						<span class="focus-input100" data-placeholder="Password"></span>
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button type="button" onclick="window.location.href = 'dashboard.html'" class="login100-form-btn">
+						<button type="button" class="login100-form-btn">
 							Login
 						</button>
 					</div>
