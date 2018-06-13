@@ -26,42 +26,7 @@
 			display: none;
 		}
 	</style>
-	<script>
 
-
-
-		var uname = localStorage.getItem('Username');
-		console.log(uname);
-
-
-
-		function showdash() {
-			document.getElementById("dash").style.display = "block";
-			document.getElementById("profile").style.display = "none";
-		}
-		function profile() {
-			document.getElementById("dash").style.display = "none";
-			document.getElementById("profile").style.display = "block";
-		}
-		function updatedProfile() { }
-		window.onload = function () {
-			document.getElementById('profileupdate').addEventListener('submit', (event) => {
-				event.preventDefault();
-				// Get the value of the name field.
-				var newunamed = document.getElementById('newuname').value;
-				var newpassd = document.getElementById('newpass').value;
-				// Save the name and password in localStorage.
-				localStorage.setItem('Username', newunamed);
-				localStorage.setItem('Password', newpassd);
-				uname = localStorage.getItem('Username');
-				alert("Profile updated!");
-				window.location.href = 'dashboard.html';
-			});
-		}
-
-
-
-	</script>
 </head>
 
 <body>
@@ -355,6 +320,7 @@
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src="js/custom.js"></script>
+	<script src="js/dashboard.js"></script>
 </body>
 
 </html>
