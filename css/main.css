@@ -538,3 +538,9 @@ iframe {
   display: none;
 }
 /* Toggling CSS End */
+.red {
+  background-color: #db3236 !important;
+}
+.w50p {
+  max-width: 45% !important;
+}
