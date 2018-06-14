@@ -69,20 +69,34 @@ function detailsOtp() {
   if ((num == null || num == "") && (mail == null || mail == "")) {
     console.log("No data");
     alert("Please do fill any one of the field");
-   }
-   // Email Validation
-   //else if (!(mail == null || mail == "")) {
+  }
+  // Email Validation
+  //else if (!(mail == null || mail == "")) {
   //   if (!validate($("#emailcheck"))) {
   //     this.alert("Error in Email");
   //   }
+  else if (!(mail == null || mail == "")) {
+    if (
+      !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailcheck.value)
+    ) {
+      alert("Error in Email");
+    } else {
+      console.log("Valid Email Id");
+      //do some function
+      otpCheck();
+    }
   } else if (!(num == null || num == "")) {
     // If number is given
     if (isNaN(num) || num < 1000000000 || num > 9999999999) {
       console.log("Not valid Mob Number ");
       alert("Please do fill proper mobile number");
     } else {
-      console.log("No errors in number nothing");
+      console.log("No errors in number ");
+      //do some function
+      otpCheck();
     }
+  } else {
+    alert("Sorry!! Some error occured. Please do try again.");
   }
 }
 //Toggling function begins
