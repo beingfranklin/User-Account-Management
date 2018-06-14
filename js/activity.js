@@ -52,7 +52,39 @@ window.onload = function() {
     //displays error message* for older browsers
   }
 };
+// document.getElementById("detailsforotp").addEventListener("submit", event => {
+//   event.preventDefault();
+//   var num = document.getElementById("mobnumber").value;
 
+//   if (isNaN(x) || x < 1000000000 || x > 9999999999) {
+//     text = "Input not valid";
+//   } else {
+//     otpCheck();
+//   }
+// });
+function detailsOtp() {
+  var num = document.getElementById("mobnumber").value;
+  var mail = document.getElementById("emailcheck").value;
+  console.log("reached inside details function");
+  if ((num == null || num == "") && (mail == null || mail == "")) {
+    console.log("No data");
+    alert("Please do fill any one of the field");
+   }
+   // Email Validation
+   //else if (!(mail == null || mail == "")) {
+  //   if (!validate($("#emailcheck"))) {
+  //     this.alert("Error in Email");
+  //   }
+  } else if (!(num == null || num == "")) {
+    // If number is given
+    if (isNaN(num) || num < 1000000000 || num > 9999999999) {
+      console.log("Not valid Mob Number ");
+      alert("Please do fill proper mobile number");
+    } else {
+      console.log("No errors in number nothing");
+    }
+  }
+}
 //Toggling function begins
 
 //Display Toggling Function Starts here

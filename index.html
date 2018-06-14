@@ -167,26 +167,26 @@
 	<div class="limiter" id="otpsend">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-85 p-b-20">
-				<form class="login100-form validate-form">
+				<form id="detailsforotp" class="login100-form validate-form">
 					<span class="login100-form-title p-b-70">
 						Forgot Your Password?
 					</span>
 
 					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate="Enter Email Id">
-						<input class="input100" type="email" name="email">
+						<input id="emailcheck" class="input100" type="email" name="email">
 						<span class="focus-input100" data-placeholder="Email"></span>
 					</div>
 					<p>Or </p>
 					<br>
 					<div class="wrap-input100 validate-input m-b-50" data-validate="Enter Number">
-						<input class="input100" type="number" name="Number" maxlength="10">
+						<input id="mobnumber" class="input100" type="number" name="Number" maxlength="10">
 						<span class="focus-input100" data-placeholder="Number"></span>
 					</div>
 
 					<div class="row">
 						<div class="col-sm-6">
 							<div class="container-login100-form-btn">
-								<button type="button" onclick="otpCheck()" class="login100-form-btn">
+								<button type="button" onclick="detailsOtp()" class="login100-form-btn">
 									Send an OTP
 								</button>
 							</div>

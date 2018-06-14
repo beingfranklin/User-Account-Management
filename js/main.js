@@ -61,22 +61,8 @@
         return false;
       }
     }
-    
-    
   }
-  
-  function phonenumber(input) {
-    var phoneno = /^\d{10}$/;
-    if ((input.value.match(phoneno))
-        {
-      return true;
-    }
-    else {
-      alert("message");
-      return false;
-    }
-  }
-  
+
   function showValidate(input) {
     var thisAlert = $(input).parent();
 
