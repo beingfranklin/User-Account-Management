@@ -5,35 +5,43 @@ window.onload = function() {
     // Add an event listener for form submissions
     document.getElementById("signupform").addEventListener("submit", event => {
       event.preventDefault();
-      // Get the value of the name field.
-      var uname = document.getElementById("username").value;
-      var upass = document.getElementById("pass").value;
-      // Save the name and password in localStorage.
-      localStorage.setItem("Username", uname);
-      localStorage.setItem("Password", upass);
-      alert("Profile Created!");
-      window.location.href = "index.html";
-      //Create profile and redirect to Main page
+
+      if (!validate($("#username"))) {
+        this.alert("Error in Email");
+      } else {
+        // Get the value of the name field.
+        var uname = document.getElementById("username").value;
+        var upass = document.getElementById("pass").value;
+        // Save the name and password in localStorage.
+        localStorage.setItem("Username", uname);
+        localStorage.setItem("Password", upass);
+        alert("Profile Created!");
+        window.location.href = "index.html";
+        //Create profile and redirect to Main page
+      }
     });
     document.getElementById("signinform").addEventListener("submit", event => {
       event.preventDefault();
       //console.log("Reached login credential checking page");
-
-      //Take data from the localStorage
-      const username = localStorage.getItem("Username");
-      const password = localStorage.getItem("Password");
-
-      //Take data from the User Input
-      var lname = document.getElementById("loginname").value;
-      var lpass = document.getElementById("loginpass").value;
-
-      //Comparison of the  data from the localStorage and userinput
-      if (lname == username && lpass == password) {
-        window.location.href = "dashboard.html";
-        //opens the dashboard page while username & password matches
+      if (!validate($("#loginname"))) {
+        this.alert("Error in Email");
       } else {
-        alert("Error Password or Username");
-        //displays error message
+        //Take data from the localStorage
+        const username = localStorage.getItem("Username");
+        const password = localStorage.getItem("Password");
+
+        //Take data from the User Input
+        var lname = document.getElementById("loginname").value;
+        var lpass = document.getElementById("loginpass").value;
+
+        //Comparison of the  data from the localStorage and userinput
+        if (lname == username && lpass == password) {
+          window.location.href = "dashboard.html";
+          //opens the dashboard page while username & password matches
+        } else {
+          alert("Error Password or Username");
+          //displays error message
+        }
       }
     });
   } else {
