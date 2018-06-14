@@ -133,6 +133,7 @@ function otpCheck() {
   document.getElementById("changepass").style.display = "none";
 }
 function changePass() {
+  alert("Please do fill with new password");
   document.getElementById("signup").style.display = "none";
   document.getElementById("signin").style.display = "none";
   document.getElementById("otpsend").style.display = "none";
@@ -144,7 +145,16 @@ function changePass() {
 
 //Update the Password after OTP Change
 function updatedPass() {
-  alert("Password updated! Login Again to continue.");
   // window.location.href = "index.html";
-  signIn();
+  var typepass = document.getElementById("typepass").value;
+  var retypepass = document.getElementById("retypepass").value;
+  if (typepass == retypepass) {
+    console.log("matches");
+    localStorage.setItem("Password", document.getElementById("typepass").value);
+    alert("Password updated! Login Again to continue.");
+    signIn();
+  } else {
+    console.log("Password mismatch");
+    alert("Password doesn't match");
+  }
 }
