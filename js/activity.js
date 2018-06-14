@@ -16,7 +16,8 @@ window.onload = function() {
         localStorage.setItem("Username", uname);
         localStorage.setItem("Password", upass);
         alert("Profile Created!");
-        window.location.href = "index.html";
+        // window.location.href = "index.html";
+        signIn();
         //Create profile and redirect to Main page
       }
     });
@@ -98,5 +99,6 @@ function changePass() {
 //Update the Password after OTP Change
 function updatedPass() {
   alert("Password updated! Login Again to continue.");
-  window.location.href = "index.html";
+  // window.location.href = "index.html";
+  signIn();
 }
