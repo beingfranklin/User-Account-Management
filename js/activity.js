@@ -25,9 +25,13 @@ window.onload = function() {
       event.preventDefault();
       //console.log("Reached login credential checking page");
       if (!validate($("#loginname"))) {
+        $("#emptyemail")
+          .attr("data-validate", "Enter username!")
+          .addClass("alert-validate");
         this.alert("Error in Email");
       } else {
         //Take data from the localStorage
+        $("#emptyemail").removeClass("alert-validate");
         const username = localStorage.getItem("Username");
         const password = localStorage.getItem("Password");
 
@@ -40,7 +44,7 @@ window.onload = function() {
           window.location.href = "dashboard.html";
           //opens the dashboard page while username & password matches
         } else {
-          alert("Error Password or Username");
+          alert("Error in Password or Username");
           //displays error message
         }
       }
