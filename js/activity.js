@@ -5,11 +5,20 @@ window.onload = function() {
     // Add an event listener for form submissions
     document.getElementById("signupform").addEventListener("submit", event => {
       event.preventDefault();
+      //for resetting
+
+      $("#regemptyemail").removeClass("alert-validate");
+
+      // Validation Begins
 
       if (!validate($("#username"))) {
+        $("#regemptyemail")
+          .attr("data-validate", "Enter Email Id!")
+          .addClass("alert-validate");
         this.alert("Error in Email");
       } else {
         // Get the value of the name field.
+        $("#regemptyemail").removeClass("alert-validate");
         var uname = document.getElementById("username").value;
         var upass = document.getElementById("pass").value;
         // Save the name and password in localStorage.
@@ -24,6 +33,13 @@ window.onload = function() {
     document.getElementById("signinform").addEventListener("submit", event => {
       event.preventDefault();
       //console.log("Reached login credential checking page");
+
+      //for resetting
+
+      $("#emptyemail").removeClass("alert-validate");
+
+      // Validation Begins
+
       if (!validate($("#loginname"))) {
         $("#emptyemail")
           .attr("data-validate", "Enter username!")
